@@ -1,0 +1,127 @@
+.video {
+    position: relative;
+    padding: 120px 100px 0 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include media-max (1200px) {
+        padding: 70px 0 0 0;
+    }
+
+    @include media-max (1200px) {
+        padding-top: calc(50px + (70 - 50) * ((100vw - 375px) / (1200 - 375)));
+        gap: calc(20px + (50 - 20) * ((100vw - 375px) / (1200 - 375)));
+        align-items: center;
+    }
+    
+    &__tablet {
+        position: relative;
+        max-width: 970px;
+        width: 100%;
+        height: 601px;
+        border: 1px solid rgba(81, 87, 115, 1);
+        border-radius: 32px;
+
+        @include media-max (600px) {
+            border: none;
+            height: calc(360px + (600 - 360) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__circle-big {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        right: 14px;
+        top: 283px;
+        border: 1px solid #515773;
+        border-radius: 32px;
+    }
+
+    &__circle-small {
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        left: 8px;
+        top: 294px;
+        border: 1px solid #515773;
+        border-radius: 32px;
+    }
+
+    &__image {
+        object-fit: cover;
+        position: absolute;
+        max-width: 970px;
+        width: 100%;
+        height: 599px;
+    }
+
+    iframe {
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-width: 970px;
+        width: 100%;
+        height: 599px;
+        border-radius: 8px;
+        padding: 30px 70px 30px 30px;
+
+        @include media-max (600px) {
+            padding: 0;
+            height: calc(350px + (450 - 100) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        max-width: 897px;
+        width: 100%;
+
+        @include media-max (1200px) {
+            max-width: max-content;
+            gap: calc(15px + (25 - 15) * ((100vw - 375px) / (1200 - 375)));
+        }
+
+        @include media-max (767px) {
+            bottom: 60px;
+        }
+
+        @include media-max (599px) {
+            bottom: calc(300px - (300 - 225) * ((100vw - 375px) / (599 - 375)));
+        }
+
+    }
+
+    &__subtitle {
+        font-family: $font-secondary;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        color: $primary;
+
+        @include media-max (1200px) {
+            font-size: calc(20px + (40 - 20) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(28px + (48 - 28) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__description {
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 300;
+        font-size: $font-size-default;
+        line-height: 26px;
+        color: $primary;
+        opacity: 0.8;
+
+        @include media-max (1200px) {
+            font-size: calc(12px + (18 - 12) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(18px + (26 - 18) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+}

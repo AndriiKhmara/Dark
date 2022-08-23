@@ -1,0 +1,115 @@
+.nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+
+    @include media-max (767px) {
+        display: none;
+    }
+
+    a {
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    color: $primary;
+    text-decoration: none;
+
+        &:hover {
+            color: #515773;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        @include media-max (1200px) {
+            font-size: calc(10px + (14 - 10) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+}
+
+.js-hamburger {
+    border: none;
+    outline: none;
+    background: transparent;
+
+    @include media (768px) {
+        display: none;
+    }
+}
+
+.menu-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border-radius: 50%;
+    background-color: $primary;
+}
+
+.menu-burger,
+.menu-burger::after,
+.menu-burger::before {
+    position: absolute;
+    top: 50%; margin-top: -1px;
+    left: 50%; margin-left: -6px;
+    width: 12px;
+    height: 2px;
+    background-color: $bcg;
+}
+
+.menu-burger::after,
+.menu-burger::before {
+    content: '';
+    display: block;
+    transition: 0.2s;
+}
+
+.menu-burger::before {
+    transform: translateY(-5px);
+}
+
+.menu-burger::after {
+    transform: translateY(5px);
+}
+
+.nav--open {
+    .menu-burger {
+        height: 0;
+        transition: none;
+    }
+
+    .menu-burger::before {
+        transform: rotate(45deg);
+    }
+    
+    .menu-burger::after {
+        transform: rotate(-45deg);
+    }
+
+    .nav {
+        display: flex;
+        gap: 60px;
+
+        @include media-max (767px) {
+            gap: calc(10px + (60 - 10) * ((100vw - 375px) / (767 - 375)));
+        }
+    }
+
+    .header__logo {
+        display: none;
+    }
+
+    .header__flex {
+        justify-content: flex-end;
+        gap: 30px;
+
+        @include media-max (767px) {
+            gap: calc(5px + (30 - 5) * ((100vw - 375px) / (767 - 375)));
+        }
+    }
+}
+

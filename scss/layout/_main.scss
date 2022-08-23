@@ -1,0 +1,7 @@
+.main {
+    padding-top: 120px;
+
+    @include media-max (992px) {
+        padding-top: calc(50px + (75 - 50) * ((100vw - 375px) / (992 - 375)));
+    }
+}

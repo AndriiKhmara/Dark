@@ -1,0 +1,38 @@
+* {
+  transition: all 0.5s ease-in-out;
+}
+
+body {
+  font-family: $font-secondary;
+  width: 100%;
+  min-width: $sm;
+  background-color: $bcg;
+}
+
+html {
+  font-size: $font-size-default;
+}
+
+.container {
+  width: 100%;
+  max-width: $content-width;
+  margin: 0 auto;
+
+  @include media-max (1200px) {
+    padding: 0 50px;
+  }
+
+  @include media-max (767px) {
+    padding: 0 15px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+span {
+  font-style: italic;
+  color: rgba(104, 159, 242, 1);
+}
+

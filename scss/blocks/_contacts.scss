@@ -1,0 +1,142 @@
+.contacts {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 114px;
+
+    @include media-max (1200px) {
+        margin-top: calc(90px + (114 - 24) * ((100vw - 375px) / (1200 - 375)));
+    }
+
+    @include media-max (767px) {
+        flex-direction: column;
+        align-items: center;
+        gap: calc(20px + (50 - 20) * ((100vw - 375px) / (992 - 375)));
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        width: 100%;
+        height: 1px;
+        background-color: #515773;
+
+        @include media-max (767px) {
+            top: -30px;
+        }
+    }
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        gap: 29px;
+        max-width: 470px;
+        width: 100%;
+
+        @include media-max (767px) {
+            gap: calc(15px + (29 - 15) * ((100vw - 375px) / (767 - 375)));
+        }
+    }
+    &__subtitle {
+        font-family: $font-secondary;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 39px;
+        color: $primary;
+
+        @include media-max (1200px) {
+            font-size: calc(20px + (40 - 20) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(28px + (39 - 28) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__description {
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 300;
+        font-size: $font-size-default;
+        line-height: 26px;
+        color: $primary;
+        opacity: 0.8;
+
+        @include media-max (1200px) {
+            font-size: calc(12px + (18 - 12) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(18px + (26 - 18) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 470px;
+        width: 100%;
+
+        @include media-max (1200px) {
+            gap: calc(20px + (40 - 20) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+    .input {
+        position: relative;
+    
+    &__name, &__tel, &__email {
+        background-color: inherit;
+        border: none;
+        height: 32px;
+        font-family: $font-secondary;
+        font-style: italic;
+        font-weight: 400;
+        font-size: $font-size-default;
+        line-height: 20px;
+        letter-spacing: 0.08em;
+        color: $primary;
+        opacity: 0.5;
+        width: 100%;
+
+        @include media-max (767px) {
+            font-size: calc(14px + (18 - 14) * ((100vw - 375px) / (767 - 375)));
+            line-height: calc(18px + (20 - 18) * ((100vw - 375px) / (767 - 375)));
+        }
+
+        &:focus {
+            border: 1px solid #689FF2;
+            outline: none;
+        }
+
+        &:active {
+            border: 1px solid #689FF2;
+            outline: none;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 100%;
+        max-width: 470px;
+        width: 100%;
+        height: 1px;
+        opacity: 0.1;
+        background-color: white;
+        }
+    }
+
+    &__button {
+        position: relative;
+        background-color: $bcg;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 8.78%;
+            right: 0%;
+            top: 45.83%;
+            bottom: 0%;
+            background: #53F3CD;
+            opacity: 0.3;
+        }
+    }
+}

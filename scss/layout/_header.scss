@@ -1,0 +1,303 @@
+.header {
+    padding-top: 30px;
+    background: url(../img/first-screen-image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: auto;
+    min-width: 320px;
+
+    &__logo {
+        a {
+            &:hover {
+                font-size: 15px;
+                color: #515773;
+            }
+    
+            &:focus {
+                font-size: 15px;
+                outline: none;
+            }
+        }
+    }
+
+    &__container {
+        backdrop-filter: blur(9px);
+        position: fixed;
+        top: 30px;
+        z-index: 1;
+        width: 100%;
+    }
+
+    &__flex {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media-max (1200px) {
+            height: calc(50px + (80 - 50) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__btn {
+        padding-top: 20px;
+    }
+
+    &__button {
+        position: relative;
+        background: linear-gradient(183.11deg, rgba(22, 25, 38, 0) 46.73%, #161926 63.21%);
+        &::after {
+            content: "";
+            position: absolute;
+            left: 11.2%;
+            right: 0%;
+            top: 45.83%;
+            bottom: 0%;
+            background: #53F3CD;
+            opacity: 0.3;
+        }
+
+        // @include media-max (600px) {
+        //     display: none;
+        // }
+    }
+
+    &__background {
+        position: absolute;
+        width: 100%;
+        min-height: 734px;
+        left: 0px;
+        top: 441px;
+
+        @include media (1110px) {
+            background: linear-gradient(183.11deg, rgba(22, 25, 38, 0) 46.73%, #161926 63.21%);
+
+        @include media (1700px){
+            top:700px;
+        }
+        }
+    }
+
+}
+
+.content {
+    padding-top: 210px;
+    max-width: 523px;
+    width: 100%;
+
+    @include media-max (1200px) {
+        padding-top: calc(75px + (210 - 75) * ((100vw - 375px) / (1200 - 375)));
+    }
+
+    &__subtitle {
+        font-family: $font-secondary;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 44px;
+        line-height: 52px;
+        color: $primary;
+
+        @include media-max (1200px) {
+            font-size: calc(20px + (44 - 20) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(28px + (52 - 28) * ((100vw - 375px) / (1200 - 375)));
+        }
+
+    }
+
+    &__description {
+        padding-top: 20px;
+        padding-bottom: 50px;
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 300;
+        font-size: $font-size-default;
+        line-height: 26px;
+        color: $primary;
+        opacity: 0.8;
+
+        @include media-max (1200px) {
+            font-size: calc(12px + (18 - 12) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(18px + (26 - 18) * ((100vw - 375px) / (1200 - 375)));
+            padding-top: calc(10px + (20 - 10) * ((100vw - 375px) / (1200 - 375)));
+            padding-bottom: calc(0px + (50 - 0) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+}
+
+.info {
+    position: relative;
+    margin-top: 154px;
+
+    @include media-max (1200px) {
+        margin-top: calc(30px + (154 - 30) * ((100vw - 375px) / (1200 - 375)));
+    }
+
+
+    &__image {
+        width: 100%;
+        max-width: 570px;
+        height: auto;
+    }
+
+    &__bcg {
+        position: absolute;
+        max-width: 770px;
+        width: 100%;
+        height: 580px;
+        right: 0;
+        top: 45px;
+        background: rgb(22, 25, 38);
+        opacity: 0.9;
+
+        @include media-max (767px) {
+            top: 0;
+            background: none;
+        }
+    }
+
+    &__list {
+        max-width: 370px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+
+        @include media-max (1200px) {
+            gap: calc(10px + (40 - 10) * ((100vw - 375px) / (1200 - 375)));
+            max-width: calc(250px + (370 - 250) * ((100vw - 375px) / (992 - 375)));
+            left: calc(50px + (0 - 50) * ((100vw - 375px) / (1200 - 375)));
+            top: calc(120px + (45 - 120) * ((100vw - 375px) / (992 - 375)));
+        }
+
+        @include media-max (767px) {
+            top: 0;
+            left: 15px;
+            width: auto;
+        }
+
+        span {
+            font-family: $font-secondary;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 50px;
+            text-align: center;
+            color: $primary;
+
+            @include media-max (1200px) {
+                font-size: calc(25px + (40 - 25) * ((100vw - 375px) / (1200 - 375)));
+            }
+        }
+    }
+
+    &__price {
+        font-family: $font-secondary;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 68px;
+        line-height: 72px;
+        text-align: center;
+        color: $primary;
+
+        @include media-max (1200px) {
+            font-size: calc(40px + (68 - 40) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(40px + (72 - 40) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__description {
+        padding-top: 12px;
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 26px;
+        text-align: center;
+        color: $primary;
+        opacity: 0.8;
+
+        @include media-max (1200px) {
+            font-size: calc(14px + (18 - 14) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(16px + (26 - 16) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+
+        @include media-max (1200px) {
+            gap: calc(10px + (40 - 10) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__line {
+        max-width: 100px;
+        width: 100%;
+        border: 1px solid rgba(104, 159, 242, 1);
+
+        @include media-max (1200px) {
+            max-width: calc(70px + (100 - 70) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+}
+
+.right-text {
+    max-width: 400px;
+    width: 100%;
+    position: absolute;
+    left: 370px;
+    top: 40px;
+
+    @include media-max (992px) {
+        max-width: calc(300px + (400 - 300) * ((100vw - 375px) / (992 - 375)));
+        top: calc(140px + (40 - 140) * ((100vw - 375px) / (992 - 375)));
+    }
+
+    @include media-max (767px) {
+        display: none;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 26px;
+        color: $primary;
+        opacity: 0.8;
+
+        @include media-max (1200px) {
+            font-size: calc(14px + (18 - 14) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(18px + (26 - 18) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__btn {
+        padding-top: 50px;
+    }
+
+    &__button {
+        position: relative;
+        background: $bcg;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            left: 8.49%;
+            right: 0%;
+            top: 45.83%;
+            bottom: 0%;
+            background: #53F3CD;
+            opacity: 0.3;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 85px;
+
+    @include media-max (992px) {
+        gap: 0;
+    }
+    
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        max-width: 570px;
+        width: 100%;
+        padding: 50px 30px 20px;
+
+        @include media-max (992px) {
+            max-width: 100%;
+            padding: calc(20px + (35 - 20) * ((100vw - 375px) / (992 - 375)));
+            gap: calc(15px + (25 - 15) * ((100vw - 375px) / (992 - 375)));
+        }
+    }
+
+    &__line {
+        width: 100%;
+        border: 1px solid #515773;
+    }
+
+    &__subtitle {
+        font-family: $font-secondary;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        color: $primary;
+
+        @include media-max (1200px) {
+            font-size: calc(20px + (40 - 20) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(28px + (48 - 28) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__description {
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 300;
+        font-size: $font-size-default;
+        line-height: 26px;
+        color: $primary;
+        opacity: 0.8;
+
+        @include media-max (1200px) {
+            font-size: calc(12px + (18 - 12) * ((100vw - 375px) / (1200 - 375)));
+            line-height: calc(18px + (26 - 18) * ((100vw - 375px) / (1200 - 375)));
+        }
+    }
+
+    &__position {
+        display: flex;
+        gap: 30px;
+
+        @include media-max (992px) {
+            flex-wrap: wrap;
+            gap: 0;
+            display: block;
+        }
+    }
+}

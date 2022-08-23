@@ -1,0 +1,127 @@
+.footer {
+    &__text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0px;
+        margin-top: 134px;
+        position: relative;
+
+        @include media-max (1200px) {
+            margin-top: calc(50px + (134 - 50) * ((100vw - 375px) / (1200 - 375)));
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            width: 100%;
+            height: 1px;
+            background-color: #515773;
+
+            @include media-max (992px) {
+                top: -20px;
+            }
+
+            @include media-max (600px) {
+                top: 0;
+            }
+        }
+
+        @include media-max (992px) {
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px 0;
+        }
+    }
+
+    &__rights {
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 26px;
+        color: $primary;
+        opacity: 0.6;
+        width: 100%;
+        max-width: 240px;
+
+        @include media-max (767px) {
+            font-size: calc(12px + (14 - 12) * ((100vw - 375px) / (767 - 375)));
+            line-height: calc(22px + (26 - 22) * ((100vw - 375px) / (767 - 375)));
+        }
+
+        @include media-max (992px) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__creator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 161px;   
+    }
+
+    &__made {
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 26px;
+        color: $primary;
+        opacity: 0.6;
+
+        @include media-max (767px) {
+            font-size: calc(12px + (14 - 12) * ((100vw - 375px) / (767 - 375)));
+            line-height: calc(22px + (26 - 22) * ((100vw - 375px) / (767 - 375)));
+        }
+    }
+
+    &__rules {
+        display: flex;
+        gap: 32px;
+        width: 100%;
+        max-width: 250px;
+
+        @include media-max (992px) {
+            justify-content: center;
+            max-width: 300px;
+        }
+
+        @include media-max (1200px) {
+            gap: calc(15px + (32 - 15) * ((100vw - 375px) / (1200 - 375)));
+
+        }
+    }
+
+    a {
+        font-family: $font-primary;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.08em;
+        color: $primary;
+        text-decoration: none;
+
+        @include media-max (767px) {
+            font-size: calc(12px + (14 - 12) * ((100vw - 375px) / (767 - 375)));
+            line-height: calc(20px + (24 - 20) * ((100vw - 375px) / (767 - 375)));
+        }
+
+        &:hover {
+            color: #515773;
+        }
+
+        &:focus {
+            outline: none;
+            color: #515773;
+        }
+    }
+}
+

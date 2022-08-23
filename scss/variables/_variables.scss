@@ -1,0 +1,30 @@
+/**********  Fonts  **********/
+$font-primary:      'Lato', sans-serif;
+$font-secondary:    'Playfair Display', serif;
+$font-size-default: 18px;
+
+/********* Colors ***********/
+$primary:         #FFFFFF;
+$secondary:       rgba(104, 159, 242, 1);
+$additional:      rgba(81, 87, 115, 1);
+$bcg:             rgba(22, 25, 38, 1);
+
+/********  Widths ***********/
+$width: 1440px;
+$content-width: 1170px;
+
+/********  Breakpoints ******/
+$lg: 1440px;
+$md: 768px;
+$md-max: $lg - 1;
+$sm: 320px;
+$sm-max: $md - 1;
+
+/***** Padding ******/
+// $sm-padding: 10px;
+// $md-padding: 35px;
+// $lg-padding: 135px
+
+
+
+
